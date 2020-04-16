@@ -1,0 +1,17 @@
+{
+  "name": "@touhou-api/api",
+  "version": "1.0.0",
+  "description": "API for Touhou Project",
+  "author": {
+    "name": "SnO2WMaN",
+    "email": "sno2wman.official@gmail.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/touhou-api/api.git",
+  "homepage": "https://github.com/touhou-api/api#readme",
+  "bugs": {
+    "url": "https://github.com/touhou-api/api/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
