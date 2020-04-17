@@ -1,19 +1,19 @@
 ---
 name: Entity Request
-about: Entityの追加
-title: ''
+about: Entityの追加要望
+title: ""
 labels: ":sparkles: Add Entity"
-assignees: ''
-
+assignees: ""
 ---
 
-何についてのEntityか
+何についての Entity か
 
 ## 留意すべき点
 
 ## 想定されるプロパティ
-||optional|description|
-|--|--|--|
-|id||固有ID|
+
+|     | optional | type | description |
+| --- | -------- | ---- | ----------- |
+| id  |          | `ID` | 固有 ID     |
 
 ## 参考
