@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    volumes:
+      - ./.mysql/data:/var/lib/mysql
+      - ./.mysql/log:/var/log/mysql
+      - ./mysql/config:/etc/mysql/conf.d
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_USERNAME=$DB_USERNAME
+      - MYSQL_PASSWORD=$DB_PASSWORD
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+      - MYSQL_DATABASE=$DB_DATABASE
+    ports:
+      - $DB_PORT:3306
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+    depends_on:
+      - db
