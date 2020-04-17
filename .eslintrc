@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "eslint-config-airbnb-base",
+    // plugin
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    // prettier
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "class-methods-use-this": 0,
+    "no-useless-constructor": 0,
+    // typescript
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    // import
+    "import/no-cycle": 1,
+    "import/prefer-default-export": 0,
+    "import/extensions": [
+      2,
+      {
+        "json": "always",
+        "ts": "never"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.ts", "*.e2e-spec.ts"],
+      "rules": { "import/no-extraneous-dependencies": 0 }
+    }
+  ]
+}

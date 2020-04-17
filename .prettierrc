@@ -1,0 +1,13 @@
+{
+  "semi": true,
+  "singleQuote": false,
+  "useTabs": false,
+  "tabWidth": 2,
+  "quoteProps": "consistent",
+  "overrides": [
+    {
+      "files": [".eslintrc", ".prettierrc", ".lintstagedrc", ".huskyrc"],
+      "options": { "parser": "json" }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "*.{json,yml,yaml,md}": ["prettier --write"],
+  "*.{eslintrc,prettierrc,lintstagedrc,huskyrc}": ["prettier --write"]
+}

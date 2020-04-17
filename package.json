@@ -12,6 +12,19 @@
   "bugs": {
     "url": "https://github.com/touhou-api/api/issues"
   },
+  "scripts": {
+    "dev": "nest start --watch",
+    "start": "nest start",
+    "prebuild": "run-s -cnsl prebuild:*",
+    "prebuild:clean": "rimraf dist",
+    "build": "nest build",
+    "fmt": "npm run lint:prettier -- --write",
+    "lint": "run-s -cnsl lint:*",
+    "lint:eslint": "eslint . --ext .js,.ts",
+    "lint:prettier": "prettier --check **/*.{json,yml,yaml,md,gql}",
+    "lintfix": "run-s -cnsl lintfix:* fmt",
+    "lintfix:eslint": "npm run lint:eslint -- --fix"
+  },
   "dependencies": {
     "@nestjs/common": "^7.0.8",
     "@nestjs/core": "^7.0.8",
