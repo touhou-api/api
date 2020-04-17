@@ -2,7 +2,7 @@
 name: Entity Request
 about: Entityの追加要望
 title: ""
-labels: ":sparkles: Add Entity"
+labels: "Add Entity"
 assignees: ""
 ---
 
