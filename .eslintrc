@@ -31,6 +31,17 @@
     // import
     "import/no-cycle": 1,
     "import/prefer-default-export": 0,
+    "import/order": [
+      2,
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/first": 2,
     "import/extensions": [
       2,
       {
