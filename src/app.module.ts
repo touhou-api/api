@@ -3,8 +3,8 @@ import path from "path";
 import { Module } from "@nestjs/common";
 import { GraphQLModule } from "@nestjs/graphql";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ApiModule } from "./api/api.module";
 
+import { ApiModule } from "./api/api.module";
 import { TypeORMEntities } from "./typeorm/typeorm.entities";
 @Module({
   imports: [
