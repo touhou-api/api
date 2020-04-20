@@ -12,8 +12,16 @@ assignees: ""
 
 ## 想定されるプロパティ
 
-|     | optional | type | description |
-| --- | -------- | ---- | ----------- |
-| id  |          | `ID` | 固有 ID     |
+### API
+
+|     | optional | type | default | description |
+| --- | :------: | ---- | :-----: | ----------- |
+| id  |          | `ID` |         | ID          |
+
+### DB
+
+|     | optional | type | default | description |
+| --- | :------: | ---- | :-----: | ----------- |
+| id  |          | `ID` |         | ID          |
 
 ## 参考
