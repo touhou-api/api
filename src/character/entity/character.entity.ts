@@ -11,4 +11,7 @@ export class Character {
   @Field()
   @Column()
   name: string;
+
+  @Column({ default: false })
+  isUnofficialName: boolean;
 }
