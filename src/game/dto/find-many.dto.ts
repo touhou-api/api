@@ -1,5 +1,4 @@
 import { ArgsType, Field, ID } from "@nestjs/graphql";
-import { Min } from "class-validator";
 
 import { GameConsole } from "../entity/game.entity";
 
@@ -14,6 +13,6 @@ export class FindManyArgs {
   @Field({ nullable: true })
   skip?: number;
 
-  @Field(() => GameConsole)
+  @Field(() => GameConsole, { nullable: true })
   console?: GameConsole;
 }
