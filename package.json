@@ -12,12 +12,15 @@
   "bugs": {
     "url": "https://github.com/touhou-api/api/issues"
   },
+  "engines": {
+    "node": "~12",
+    "yarn": "~1"
+  },
   "scripts": {
     "dev": "nest start --watch",
     "start": "nest start",
-    "prebuild": "run-s -cnsl prebuild:*",
-    "prebuild:clean": "rimraf dist",
     "build": "nest build",
+    "production": "node dist/main",
     "fmt": "npm run lint:prettier -- --write",
     "lint": "run-s -cnsl lint:*",
     "lint:eslint": "eslint . --ext .js,.ts",
@@ -65,7 +68,6 @@
     "lint-staged": ">=10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "rimraf": "^3.0.2",
     "supertest": "^4.0.2",
     "ts-jest": "^25.3.1",
     "ts-loader": "^7.0.0",
