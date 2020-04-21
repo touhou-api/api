@@ -15,8 +15,6 @@
   "scripts": {
     "dev": "nest start --watch",
     "start": "nest start",
-    "prebuild": "run-s -cnsl prebuild:*",
-    "prebuild:clean": "rimraf dist",
     "build": "nest build",
     "production": "node dist/main",
     "fmt": "npm run lint:prettier -- --write",
