@@ -4,6 +4,8 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { GameExternalLink } from "./link.entity";
 import { Release } from "./release.entitiy";
 
+import { GameAppearance } from "src/game-appearance/entity/appearance.entity";
+
 @ObjectType()
 @Entity()
 export class Game {
@@ -35,4 +37,8 @@ export class Game {
   @Field(() => [GameExternalLink])
   @OneToMany(() => GameExternalLink, (link) => link.game, { eager: true })
   links: GameExternalLink[];
+
+  @Field(() => [GameAppearance])
+  @OneToMany(() => GameAppearance, (appearance) => appearance.game)
+  appearances: GameAppearance[];
 }

@@ -5,9 +5,11 @@ import { CharacterResolver } from "./character.resolver";
 import { CharacterService } from "./character.service";
 import { Character } from "./entity/character.entity";
 
+import { GameAppearanceModule } from "src/game-appearance/appearance.module";
+
 @Module({
   providers: [CharacterService, CharacterResolver],
-  imports: [TypeOrmModule.forFeature([Character])],
+  imports: [TypeOrmModule.forFeature([Character]), GameAppearanceModule],
   exports: [
     CharacterService,
     CharacterResolver,

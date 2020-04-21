@@ -12,6 +12,8 @@ export class CharacterService {
   ) {}
 
   async getById(id: string) {
-    return this.characterRepository.findOneOrFail(id);
+    return this.characterRepository.findOneOrFail(id, {
+      relations: ["appearances"],
+    });
   }
 }

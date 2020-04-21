@@ -12,6 +12,8 @@ export class GameService {
   ) {}
 
   async getById(id: string) {
-    return this.gameRepository.findOneOrFail(id);
+    return this.gameRepository.findOneOrFail(id, {
+      relations: ["appearances"],
+    });
   }
 }
