@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - ./.mysql/data:/var/lib/mysql
+      - ./.mysql/log:/var/log/mysql
+      - ./mysql/config:/etc/mysql/conf.d
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_USERNAME=$DB_USERNAME
+      - MYSQL_PASSWORD=$DB_PASSWORD
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+      - MYSQL_DATABASE=$DB_DATABASE
+    ports:
+      - $DB_PORT:3306
+  api:
+    container_name: api
+    tty: true
+    build:
+      context: .
+    environment:
+      - DB_USERNAME=$DB_USERNAME
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_DATABASE=$DB_DATABASE
+      - DB_HOST=db
+      - DB_PORT:$DB_PORT
+    ports:
+      - 4000:4000
