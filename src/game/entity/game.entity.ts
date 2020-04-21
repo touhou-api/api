@@ -1,10 +1,18 @@
-import { Field, ID, ObjectType } from "@nestjs/graphql";
+import { Field, ID, ObjectType, registerEnumType } from "@nestjs/graphql";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 import { GameExternalLink } from "./link.entity";
 import { Release } from "./release.entitiy";
 
 import { GameAppearance } from "src/game-appearance/entity/appearance.entity";
+
+export enum GameConsole {
+  PC_98 = "PC-98",
+  WINDOWS = "Windows",
+}
+registerEnumType(GameConsole, {
+  name: "GameConsole",
+});
 
 @ObjectType()
 @Entity()
@@ -41,4 +49,8 @@ export class Game {
   @Field(() => [GameAppearance])
   @OneToMany(() => GameAppearance, (appearance) => appearance.game)
   appearances: GameAppearance[];
+
+  @Field(() => GameConsole)
+  @Column({ type: "enum", enum: GameConsole, default: GameConsole.WINDOWS })
+  console: GameConsole;
 }
