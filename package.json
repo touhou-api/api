@@ -21,7 +21,7 @@
     "fmt": "npm run lint:prettier -- --write",
     "lint": "run-s -cnsl lint:*",
     "lint:eslint": "eslint . --ext .js,.ts",
-    "lint:prettier": "prettier --check **/*.{json,yml,yaml,md,gql}",
+    "lint:prettier": "prettier *.{json,yml,yaml,md,gql} --check",
     "lintfix": "run-s -cnsl lintfix:* fmt",
     "lintfix:eslint": "npm run lint:eslint -- --fix"
   },
