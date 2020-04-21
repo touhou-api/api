@@ -18,6 +18,7 @@
     "prebuild": "run-s -cnsl prebuild:*",
     "prebuild:clean": "rimraf dist",
     "build": "nest build",
+    "production": "node dist/main",
     "fmt": "npm run lint:prettier -- --write",
     "lint": "run-s -cnsl lint:*",
     "lint:eslint": "eslint . --ext .js,.ts",

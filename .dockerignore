@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+*.graphql
+
+# DB
+.mysql/
+
+# Tools
+*.*rc*
+*.*ignore*
