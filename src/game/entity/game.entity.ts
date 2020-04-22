@@ -1,6 +1,7 @@
 import { Field, ID, ObjectType, registerEnumType } from "@nestjs/graphql";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
+import { LocalizeTitle } from "./abbreviation.entity";
 import { GameExternalLink } from "./link.entity";
 import { Release } from "./release.entitiy";
 
@@ -53,4 +54,11 @@ export class Game {
   @Field(() => GameConsole)
   @Column({ type: "enum", enum: GameConsole, default: GameConsole.WINDOWS })
   console: GameConsole;
+
+  @Field(() => [LocalizeTitle])
+  @OneToMany(() => LocalizeTitle, (link) => link.game, { eager: true })
+  localizedTitles: LocalizeTitle[];
+
+  @Field(() => LocalizeTitle, { nullable: true })
+  localizedTitle: LocalizeTitle;
 }

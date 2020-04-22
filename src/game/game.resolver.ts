@@ -1,13 +1,14 @@
 import {
   Args,
   ID,
-  Query,
-  Resolver,
-  ResolveField,
   Parent,
+  Query,
+  ResolveField,
+  Resolver,
 } from "@nestjs/graphql";
 
 import { FindManyArgs } from "./dto/find-many.dto";
+import { Language, LocalizeTitle } from "./entity/abbreviation.entity";
 import { Game } from "./entity/game.entity";
 import { Release } from "./entity/release.entitiy";
 import { GameService } from "./game.service";
@@ -45,5 +46,13 @@ export class GameResolver {
     return this.appearanceResolver.gameAppearances(
       parent.appearances.map(({ id }) => id)
     );
+  }
+
+  @ResolveField(() => LocalizeTitle)
+  async localizedTitle(
+    @Parent() parent: Game,
+    @Args("lang", { type: () => Language }) lang: Language
+  ): Promise<LocalizeTitle> {
+    return parent.localizedTitles.find((title) => title.lang === lang);
   }
 }
