@@ -60,5 +60,5 @@ export class Game {
   localizedTitles: LocalizeTitle[];
 
   @Field(() => LocalizeTitle, { nullable: true })
-  localizedTitle: LocalizeTitle;
+  localizedTitle?: LocalizeTitle;
 }

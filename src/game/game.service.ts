@@ -23,7 +23,8 @@ export class GameService {
       .createQueryBuilder("game")
       .addOrderBy("number", "ASC")
       .leftJoinAndSelect("game.links", "links")
-      .leftJoinAndSelect("game.appearances", "appearances");
+      .leftJoinAndSelect("game.appearances", "appearances")
+      .leftJoinAndSelect("game.localizedTitles", "localizedTitles");
     if (args.id) query.whereInIds(args.id);
     else {
       if (args.take) query.take(args.take);
