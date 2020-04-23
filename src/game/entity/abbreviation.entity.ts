@@ -24,13 +24,13 @@ export class LocalizeTitle {
   @Column()
   title: string;
 
-  @Field()
-  @Column()
-  longTitle: string;
+  @Field({ nullable: true })
+  @Column({ nullable: true })
+  longTitle?: string;
 
-  @Field()
-  @Column()
-  abbreviation: string;
+  @Field({ nullable: true })
+  @Column({ nullable: true })
+  abbreviation?: string;
 
   @Field(() => Language)
   @Column({ type: "enum", enum: Language })
